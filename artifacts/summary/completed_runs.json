@@ -1,0 +1,113 @@
+{
+  "completed_runs": [
+    {
+      "run_name": "rubert_text_ru",
+      "seed": 42,
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "text_column": "text_ru",
+      "output_dir": "/kaggle/working/phase1_baselines/rubert_text_ru/seed_42",
+      "macro_f1": 0.7344776791935611,
+      "roc_auc_macro_ovr": 0.946276778887667
+    },
+    {
+      "run_name": "rubert_text_ru",
+      "seed": 52,
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "text_column": "text_ru",
+      "output_dir": "/kaggle/working/phase1_baselines/rubert_text_ru/seed_52",
+      "macro_f1": 0.738350208384185,
+      "roc_auc_macro_ovr": 0.9421991448235807
+    },
+    {
+      "run_name": "rubert_text_ru",
+      "seed": 62,
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "text_column": "text_ru",
+      "output_dir": "/kaggle/working/phase1_baselines/rubert_text_ru/seed_62",
+      "macro_f1": 0.7504333094130722,
+      "roc_auc_macro_ovr": 0.941980540803101
+    },
+    {
+      "run_name": "rubert_text_masked",
+      "seed": 42,
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "text_column": "text_masked",
+      "output_dir": "/kaggle/working/phase1_baselines/rubert_text_masked/seed_42",
+      "macro_f1": 0.7496791004443363,
+      "roc_auc_macro_ovr": 0.9370300884532257
+    },
+    {
+      "run_name": "rubert_text_masked",
+      "seed": 52,
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "text_column": "text_masked",
+      "output_dir": "/kaggle/working/phase1_baselines/rubert_text_masked/seed_52",
+      "macro_f1": 0.7296964212186124,
+      "roc_auc_macro_ovr": 0.9417080555667255
+    },
+    {
+      "run_name": "rubert_text_masked",
+      "seed": 62,
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "text_column": "text_masked",
+      "output_dir": "/kaggle/working/phase1_baselines/rubert_text_masked/seed_62",
+      "macro_f1": 0.7472827747663465,
+      "roc_auc_macro_ovr": 0.9389534365696074
+    },
+    {
+      "run_name": "xlmr_text_ru",
+      "seed": 42,
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "text_column": "text_ru",
+      "output_dir": "/kaggle/working/phase1_baselines/xlmr_text_ru/seed_42",
+      "macro_f1": 0.7743700558769012,
+      "roc_auc_macro_ovr": 0.9512221493182531
+    },
+    {
+      "run_name": "xlmr_text_ru",
+      "seed": 52,
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "text_column": "text_ru",
+      "output_dir": "/kaggle/working/phase1_baselines/xlmr_text_ru/seed_52",
+      "macro_f1": 0.7570402978596125,
+      "roc_auc_macro_ovr": 0.9432671866302642
+    },
+    {
+      "run_name": "xlmr_text_ru",
+      "seed": 62,
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "text_column": "text_ru",
+      "output_dir": "/kaggle/working/phase1_baselines/xlmr_text_ru/seed_62",
+      "macro_f1": 0.7713294858341474,
+      "roc_auc_macro_ovr": 0.9497104864344483
+    },
+    {
+      "run_name": "xlmr_text_masked",
+      "seed": 42,
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "text_column": "text_masked",
+      "output_dir": "/kaggle/working/phase1_baselines/xlmr_text_masked/seed_42",
+      "macro_f1": 0.7629871959476274,
+      "roc_auc_macro_ovr": 0.9463890416971831
+    },
+    {
+      "run_name": "xlmr_text_masked",
+      "seed": 52,
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "text_column": "text_masked",
+      "output_dir": "/kaggle/working/phase1_baselines/xlmr_text_masked/seed_52",
+      "macro_f1": 0.7618189134775495,
+      "roc_auc_macro_ovr": 0.9434873058203236
+    },
+    {
+      "run_name": "xlmr_text_masked",
+      "seed": 62,
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "text_column": "text_masked",
+      "output_dir": "/kaggle/working/phase1_baselines/xlmr_text_masked/seed_62",
+      "macro_f1": 0.7750598521330054,
+      "roc_auc_macro_ovr": 0.9542333766620832
+    }
+  ],
+  "failed_runs": []
+}

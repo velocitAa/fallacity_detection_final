@@ -1,0 +1,282 @@
+{
+  "runs_root": "/Users/omnipresence/Downloads/results/phase1_baselines",
+  "run_count": 12,
+  "groups": {
+    "rubert-base-cased__text_masked__single": {
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "model_slug": "rubert-base-cased",
+      "text_column": "text_masked",
+      "seed_count": 3,
+      "macro_f1": {
+        "mean": 0.7422194321430984,
+        "std": 0.01091123027663904
+      },
+      "macro_precision": {
+        "mean": 0.7567167000307078,
+        "std": 0.020131121548508844
+      },
+      "macro_recall": {
+        "mean": 0.7344307262646859,
+        "std": 0.003765775458657881
+      },
+      "accuracy": {
+        "mean": 0.7437207322264794,
+        "std": 0.014966705688588303
+      },
+      "roc_auc_macro_ovr": {
+        "mean": 0.9392305268631862,
+        "std": 0.00235126101312536
+      },
+      "per_class_f1": {
+        "appeal to authority": {
+          "mean": 0.8011147583974246,
+          "std": 0.018567020701595483
+        },
+        "appeal to majority": {
+          "mean": 0.7678204520309784,
+          "std": 0.009686457054556341
+        },
+        "appeal to nature": {
+          "mean": 0.8522728867556454,
+          "std": 0.012937788997950051
+        },
+        "appeal to tradition": {
+          "mean": 0.7923060335532842,
+          "std": 0.025969626092333557
+        },
+        "appeal to worse problems": {
+          "mean": 0.7437894475768981,
+          "std": 0.01291302097715363
+        },
+        "false dilemma": {
+          "mean": 0.7663266243911405,
+          "std": 0.009652421309407406
+        },
+        "hasty generalization": {
+          "mean": 0.45125658231308147,
+          "std": 0.018487052322510418
+        },
+        "none": {
+          "mean": 0.7429338283970872,
+          "std": 0.018403241926426
+        },
+        "slippery slope": {
+          "mean": 0.7621542758723459,
+          "std": 0.0179713859747107
+        }
+      },
+      "run_dirs": [
+        "/Users/omnipresence/Downloads/results/phase1_baselines/rubert_text_masked/seed_42",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/rubert_text_masked/seed_52",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/rubert_text_masked/seed_62"
+      ]
+    },
+    "rubert-base-cased__text_ru__single": {
+      "model_name": "DeepPavlov/rubert-base-cased",
+      "model_slug": "rubert-base-cased",
+      "text_column": "text_ru",
+      "seed_count": 3,
+      "macro_f1": {
+        "mean": 0.741087065663606,
+        "std": 0.008322459056756243
+      },
+      "macro_precision": {
+        "mean": 0.7529264176445355,
+        "std": 0.02099906540103928
+      },
+      "macro_recall": {
+        "mean": 0.7347696476845649,
+        "std": 0.009709548519053101
+      },
+      "accuracy": {
+        "mean": 0.7437207322264794,
+        "std": 0.015236722152552774
+      },
+      "roc_auc_macro_ovr": {
+        "mean": 0.9434854881714496,
+        "std": 0.0024197985094370554
+      },
+      "per_class_f1": {
+        "appeal to authority": {
+          "mean": 0.7973648857327759,
+          "std": 0.013526225650361092
+        },
+        "appeal to majority": {
+          "mean": 0.7812980030721967,
+          "std": 0.011865986601751397
+        },
+        "appeal to nature": {
+          "mean": 0.8486172244462591,
+          "std": 0.020392935976702952
+        },
+        "appeal to tradition": {
+          "mean": 0.7621646955035426,
+          "std": 0.028745749900930845
+        },
+        "appeal to worse problems": {
+          "mean": 0.7704612103439082,
+          "std": 0.008874069302635661
+        },
+        "false dilemma": {
+          "mean": 0.7558017196246627,
+          "std": 0.023618172626605243
+        },
+        "hasty generalization": {
+          "mean": 0.4501484617538776,
+          "std": 0.026760707401025447
+        },
+        "none": {
+          "mean": 0.745412801635815,
+          "std": 0.021521037695589103
+        },
+        "slippery slope": {
+          "mean": 0.7585145888594165,
+          "std": 0.014872078729716593
+        }
+      },
+      "run_dirs": [
+        "/Users/omnipresence/Downloads/results/phase1_baselines/rubert_text_ru/seed_42",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/rubert_text_ru/seed_52",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/rubert_text_ru/seed_62"
+      ]
+    },
+    "xlm-roberta-base__text_masked__single": {
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "model_slug": "xlm-roberta-base",
+      "text_column": "text_masked",
+      "seed_count": 3,
+      "macro_f1": {
+        "mean": 0.7666219871860608,
+        "std": 0.007330715833370627
+      },
+      "macro_precision": {
+        "mean": 0.7682393556665418,
+        "std": 0.001221419426163351
+      },
+      "macro_recall": {
+        "mean": 0.7747254729619191,
+        "std": 0.01155939239526308
+      },
+      "accuracy": {
+        "mean": 0.7726692209450831,
+        "std": 0.0012771392081736832
+      },
+      "roc_auc_macro_ovr": {
+        "mean": 0.9480365747265299,
+        "std": 0.005559252058156803
+      },
+      "per_class_f1": {
+        "appeal to authority": {
+          "mean": 0.8339807852965748,
+          "std": 0.008179112014046306
+        },
+        "appeal to majority": {
+          "mean": 0.787272492577772,
+          "std": 0.015816128555945018
+        },
+        "appeal to nature": {
+          "mean": 0.8438490476613644,
+          "std": 0.013821632450769571
+        },
+        "appeal to tradition": {
+          "mean": 0.7772712323795915,
+          "std": 0.01074409205386582
+        },
+        "appeal to worse problems": {
+          "mean": 0.8023245728163761,
+          "std": 0.02185534186291512
+        },
+        "false dilemma": {
+          "mean": 0.7920596622066243,
+          "std": 0.034260888452939904
+        },
+        "hasty generalization": {
+          "mean": 0.4903507336497027,
+          "std": 0.05574547751971738
+        },
+        "none": {
+          "mean": 0.7724219437334132,
+          "std": 0.007811840168263578
+        },
+        "slippery slope": {
+          "mean": 0.8000674143531287,
+          "std": 0.029830908390175725
+        }
+      },
+      "run_dirs": [
+        "/Users/omnipresence/Downloads/results/phase1_baselines/xlmr_text_masked/seed_42",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/xlmr_text_masked/seed_52",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/xlmr_text_masked/seed_62"
+      ]
+    },
+    "xlm-roberta-base__text_ru__single": {
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "model_slug": "xlm-roberta-base",
+      "text_column": "text_ru",
+      "seed_count": 3,
+      "macro_f1": {
+        "mean": 0.7675799465235537,
+        "std": 0.00925334599027355
+      },
+      "macro_precision": {
+        "mean": 0.7660809851578297,
+        "std": 0.0036301158396721414
+      },
+      "macro_recall": {
+        "mean": 0.7789619135766093,
+        "std": 0.01215084473407772
+      },
+      "accuracy": {
+        "mean": 0.7726692209450831,
+        "std": 0.002554278416347422
+      },
+      "roc_auc_macro_ovr": {
+        "mean": 0.9480666074609886,
+        "std": 0.004224584169046852
+      },
+      "per_class_f1": {
+        "appeal to authority": {
+          "mean": 0.8177967441125336,
+          "std": 0.015559428185856117
+        },
+        "appeal to majority": {
+          "mean": 0.7981316663134845,
+          "std": 0.024529552934283685
+        },
+        "appeal to nature": {
+          "mean": 0.85633608815427,
+          "std": 0.005487213302215478
+        },
+        "appeal to tradition": {
+          "mean": 0.7549725137431285,
+          "std": 0.033472702282553383
+        },
+        "appeal to worse problems": {
+          "mean": 0.8019796380090498,
+          "std": 0.015149821151950906
+        },
+        "false dilemma": {
+          "mean": 0.8060992907801419,
+          "std": 0.02498105514265639
+        },
+        "hasty generalization": {
+          "mean": 0.49866196665932294,
+          "std": 0.0637631297771975
+        },
+        "none": {
+          "mean": 0.7698327236314806,
+          "std": 0.005813218965923326
+        },
+        "slippery slope": {
+          "mean": 0.8044088873085717,
+          "std": 0.011123847891122637
+        }
+      },
+      "run_dirs": [
+        "/Users/omnipresence/Downloads/results/phase1_baselines/xlmr_text_ru/seed_42",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/xlmr_text_ru/seed_52",
+        "/Users/omnipresence/Downloads/results/phase1_baselines/xlmr_text_ru/seed_62"
+      ]
+    }
+  }
+}
