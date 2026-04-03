@@ -87,7 +87,14 @@ python3 -m research_baselines aggregate-baselines \
 Дополнительные артефакты:
 
 - ![PCA 2D](docs/assets/img/pca_2d.png)
+- ![PCA 3D](docs/assets/img/pca_3d.png)
 - ![Attention summary](docs/assets/img/attention_slippery_slope.png)
+
+Примеры маскирования сущностей:
+
+| Пример 1 | Пример 2 |
+| --- | --- |
+| ![Masking example none](docs/assets/img/masking_example_none.png) | ![Masking example appeal to tradition](docs/assets/img/masking_example_appeal_to_tradition.png) |
 
 ## Интерактивные артефакты
 
