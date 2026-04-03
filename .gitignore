@@ -30,6 +30,9 @@ roc_auc.png
 token_distribution.png
 top_words_by_class.png
 words_class_frequency.png
+!docs/assets/
+!docs/assets/img/
+!docs/assets/img/*.png
 
 *.html
 *.pdf
