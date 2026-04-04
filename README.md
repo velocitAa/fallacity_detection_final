@@ -29,23 +29,11 @@
 - [02_phase1_encoder_baselines.ipynb](notebooks/02_phase1_encoder_baselines.ipynb) — запуск Phase 1 encoder-baselines.
 - [03_phase1_results_analysis.ipynb](notebooks/03_phase1_results_analysis.ipynb) — анализ уже обученных run-ов и агрегированных метрик.
 
-Минимальная CLI-репликация:
+Рекомендуемый сценарий воспроизведения:
 
-```bash
-python3 -m research_baselines prepare-masked \
-  --input data/cocolofa_ru_v2.jsonl \
-  --out data/cocolofa_ru_v2_masked.jsonl
-
-python3 -m research_baselines train-baseline \
-  --dataset data/cocolofa_ru_v2.jsonl \
-  --model-name FacebookAI/xlm-roberta-base \
-  --text-column text_ru \
-  --seed 42
-
-python3 -m research_baselines aggregate-baselines \
-  --runs-root outputs/phase1_baselines \
-  --out-dir artifacts/summary
-```
+1. выполнить [01_masking.ipynb](notebooks/01_masking.ipynb) для построения маскированной версии корпуса;
+2. выполнить [02_phase1_encoder_baselines.ipynb](notebooks/02_phase1_encoder_baselines.ipynb) для обучения encoder-baselines;
+3. выполнить [03_phase1_results_analysis.ipynb](notebooks/03_phase1_results_analysis.ipynb) для агрегации метрик и построения визуальной аналитики.
 
 ## Результаты Phase 1
 
@@ -96,22 +84,14 @@ python3 -m research_baselines aggregate-baselines \
 | --- | --- |
 | ![Masking example none](docs/assets/img/masking_example_none.png) | ![Masking example appeal to tradition](docs/assets/img/masking_example_appeal_to_tradition.png) |
 
-## Интерактивные артефакты
-
-Интерактивные attention-view не включаются в git history из-за ограничений GitHub по размеру файлов. Они хранятся в полном release-архиве вместе с весами и run-артефактами.
-
-- [Навигация по интерактивным HTML](docs/interactive/attention/index.md)
-- Полные интерактивные HTML доступны внутри `release_assets/cocolofa_ru_phase1_results_full.zip` и рекомендуются к публикации как отдельные release-assets или external artifacts.
-
 ## Полные артефакты
 
-Полный каталог `results` с весами и run-артефактами архивируется отдельно и не включается в обычный git history.
+Полный каталог `results` с весами моделей, run-артефактами и дополнительными HTML/PNG-материалами опубликован отдельно на Google Drive:
 
-- локальный архив: `release_assets/cocolofa_ru_phase1_results_full.zip`
-- манифест архива: [release_manifest.json](artifacts/summary/release_manifest.json)
+- [Google Drive: full results folder](https://drive.google.com/drive/folders/1yBxYgh-2wmf-Rh3tna9Bm6JNWAO8Qdq5?usp=sharing)
 
-Рекомендуемый режим публикации:
+В репозитории сохранены только компактные производные артефакты, необходимые для чтения результатов:
 
-1. прикрепить zip как `Release asset`;
-2. включить GitHub Pages from `/docs`;
-3. заменить поле `download_url` в манифесте на публичную ссылку релиза.
+- [summary_metrics.json](artifacts/summary/summary_metrics.json)
+- [summary_table.md](artifacts/summary/summary_table.md)
+- [completed_runs.json](artifacts/summary/completed_runs.json)
