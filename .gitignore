@@ -7,11 +7,9 @@ scripts/
 
 cocolofa_explanations_batch/
 cocolofa_ru_batch/
-research_baselines/
+research_baselines/__pycache__/
+research_baselines/**/*.pyc
 
-entity_masker.py
-fallacy_labels.py
-cocolofa_loader.py
 dora_trainer.py
 rubert_baseline.py
 translator.py
@@ -39,6 +37,36 @@ words_class_frequency.png
 
 release_assets/*.zip
 !release_assets/.gitkeep
+results/
+phase1_error_analysis/
+
+# Local/generated research artifacts that should not be published directly.
+artifacts/explanation_batch/
+artifacts/translation_batch/
+data/cocolofa_ru_v2_explanations*.json*
+data_explanation/
+dspy/
+few-shot/
+reasoning/
+zero-shot/
+translation_quality_analysis/
+notebooks/Cell output*.csv
+notebooks/cometwiki*.csv
+error_classes.png
+f1_by_class.png
+false_none.png
+stability.png
+stability2.png
+Official part/
+reviewer_doc.txt
+notebooks/05_phase1_error_analysis_local.ipynb
+notebooks/kaggle_03_phase2_oracle_dual_encoder_standalone.ipynb
+notebooks/kaggle_04_phase2_text_only_multitask_standalone.ipynb
+notebooks/kaggle_05_decoder_only_lora_standalone.ipynb
+notebooks/kaggle_06_decoder_only_prompting_standalone.ipynb
+notebooks/kaggle_07_dspy_prompt_optimization_standalone.ipynb
+notebooks/kaggle_08_vllm_dspy_standalone.ipynb
+notebooks/kaggle_09_transformers_dspy_standalone.ipynb
 
 notebooks/01_setup_data_masking.ipynb
 notebooks/03_phase2_explanations_dual_encoder_dora.ipynb

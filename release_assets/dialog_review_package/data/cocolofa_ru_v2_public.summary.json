@@ -1,0 +1,18 @@
+{
+  "dataset": "release_assets/dialog_review_package/data/cocolofa_ru_v2_public.jsonl",
+  "rows": 7591,
+  "public_fields": [
+    "sample_id",
+    "split",
+    "label_str",
+    "label_id",
+    "text_en",
+    "text_ru"
+  ],
+  "removed_fields": [
+    "news_id",
+    "respond_to",
+    "translation_status",
+    "worker_id"
+  ]
+}

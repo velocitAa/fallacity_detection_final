@@ -1,0 +1,23 @@
+{
+  "dataset": "data/cocolofa_ru_v2.jsonl",
+  "rows": 7591,
+  "public_fields": [
+    "sample_id",
+    "split",
+    "label_str",
+    "label_id",
+    "text_en",
+    "text_ru"
+  ],
+  "selection": "accepted translation subset aligned with data/cocolofa_ru_v2_masked.jsonl",
+  "removed_fields": [
+    "news_id",
+    "respond_to",
+    "translation_flags",
+    "translation_model",
+    "translation_prompt_version",
+    "translation_provider",
+    "translation_status",
+    "worker_id"
+  ]
+}

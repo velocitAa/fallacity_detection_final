@@ -2,8 +2,9 @@
 
 Репозиторий содержит репродукционные артефакты по сборке и анализу русскоязычного корпуса **COCOLOFA-RU v2** для задачи детекции логических ошибок в аргументативных текстах. В составе репозитория находятся:
 
-- переведённый и маскированный датасеты;
-- публичные notebooks для маскирования, Phase 1 baseline-экспериментов и post-hoc анализа;
+- очищенные публичные датасеты без полей провайдера перевода, модели, версии промпта и служебной метаинформации;
+- код `research_baselines`, необходимый для запуска базовых notebook-ов;
+- публичные notebooks для маскирования, baseline-экспериментов, оценки качества перевода и экспериментов с ruRoBERTa/RoSBERTa;
 - ключевые графики и агрегированные метрики;
 - ссылки и публикационные метаданные для интерактивных BertViz attention-артефактов.
 
@@ -11,13 +12,24 @@
 
 - Переведённый корпус: [data/cocolofa_ru_v2.jsonl](data/cocolofa_ru_v2.jsonl)
 - Маскированный корпус: [data/cocolofa_ru_v2_masked.jsonl](data/cocolofa_ru_v2_masked.jsonl)
+- Пакет для рецензии: [release_assets/dialog_review_package](release_assets/dialog_review_package)
 
 Краткие характеристики:
 
-- полный переведённый корпус: `7706` записей;
-- автоматически принятый подкорпус для обучения: `7591` записей (`ok + repaired_ok`);
+- опубликованный корпус для воспроизведения экспериментов: `7591` записей;
+- полный внутренний переведённый корпус до фильтрации: `7706` записей; в публичную версию включен только принятый подкорпус (`ok + repaired_ok`);
 - split для обучения: `5300 / 1508 / 783` (`train / dev / test`);
 - число классов: `9`.
+
+Публичные JSONL-файлы оставляют только поля, необходимые для воспроизведения экспериментов:
+
+- `sample_id`
+- `split`
+- `label_str`
+- `label_id`
+- `text_en`
+- `text_ru`
+- `text_masked` только для маскированной версии
 
 Инвентарь меток:
 
@@ -25,15 +37,43 @@
 
 ## Ноутбуки
 
-- [01_masking.ipynb](notebooks/01_masking.ipynb) — генерация маскированного корпуса.
-- [02_phase1_encoder_baselines.ipynb](notebooks/02_phase1_encoder_baselines.ipynb) — запуск Phase 1 encoder-baselines.
+- [01_masking.ipynb](notebooks/01_masking.ipynb) — генерация маскированного корпуса; использует модуль [research_baselines](research_baselines).
+- [02_phase1_encoder_baselines.ipynb](notebooks/02_phase1_encoder_baselines.ipynb) — запуск Phase 1 encoder-baselines; использует модуль [research_baselines](research_baselines).
 - [03_phase1_results_analysis.ipynb](notebooks/03_phase1_results_analysis.ipynb) — анализ уже обученных run-ов и агрегированных метрик.
+- [06_translation_quality_analysis_local.ipynb](notebooks/06_translation_quality_analysis_local.ipynb) — проверка качества перевода без LLM-судьи: LaBSE и COMETKiwi.
+- [kaggle_10_ru_baselines_standalone.ipynb](notebooks/kaggle_10_ru_baselines_standalone.ipynb) — дополнительные baseline-эксперименты для рецензии: `ai-forever/ruRoberta-large` и `ai-forever/ru-en-RoSBERTa + LogisticRegression`.
 
 Рекомендуемый сценарий воспроизведения:
 
 1. выполнить [01_masking.ipynb](notebooks/01_masking.ipynb) для построения маскированной версии корпуса;
 2. выполнить [02_phase1_encoder_baselines.ipynb](notebooks/02_phase1_encoder_baselines.ipynb) для обучения encoder-baselines;
-3. выполнить [03_phase1_results_analysis.ipynb](notebooks/03_phase1_results_analysis.ipynb) для агрегации метрик и построения визуальной аналитики.
+3. выполнить [03_phase1_results_analysis.ipynb](notebooks/03_phase1_results_analysis.ipynb) для агрегации метрик и построения визуальной аналитики;
+4. выполнить [06_translation_quality_analysis_local.ipynb](notebooks/06_translation_quality_analysis_local.ipynb) для валидации перевода;
+5. выполнить [kaggle_10_ru_baselines_standalone.ipynb](notebooks/kaggle_10_ru_baselines_standalone.ipynb) для проверки дополнительных русскоязычных baseline-моделей.
+
+## Результаты дополнительных baseline-моделей
+
+Эти эксперименты добавлены для расширения набора русскоязычных сравнений.
+
+| Метод | Модель | Accuracy | Macro-F1 |
+| --- | --- | ---: | ---: |
+| `ruroberta_finetune` | `ai-forever/ruRoberta-large` | `0.819923` | `0.820998` |
+| `sbert_logreg` | `ai-forever/ru-en-RoSBERTa` | `0.540230` | `0.559437` |
+
+Интерпретация: дообученная `ruRoBERTa-large` является самым сильным классификационным baseline-ом, а `ru-en-RoSBERTa + LogisticRegression` служит компактной моделью на sentence embeddings без дообучения трансформера.
+
+## Качество перевода
+
+Перевод проверялся без LLM-судьи:
+
+- LaBSE: межъязыковое семантическое сходство, среднее значение на проверенной подвыборке около `0.887`.
+- COMETKiwi: reference-free оценка качества машинного перевода, среднее значение около `0.857`.
+
+| LaBSE semantic similarity | COMETKiwi reference-free QE |
+| --- | --- |
+| ![LaBSE translation quality](docs/assets/img/translation_labse_similarity.png) | ![COMETKiwi translation quality](docs/assets/img/translation_cometkiwi_scores.png) |
+
+Таблицы с численными оценками лежат в [artifacts/translation_quality](artifacts/translation_quality).
 
 ## Результаты Phase 1
 
